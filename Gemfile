@@ -18,12 +18,15 @@ gem 'thin'
 gem 'slim'
 gem 'devise'
 
-group :development, :test do
+group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
   gem 'letter_opener'
+end
 
+group :development, :test do
+  gem 'pry'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rails'
