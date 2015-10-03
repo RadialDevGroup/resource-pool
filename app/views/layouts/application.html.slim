@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title ResourcePool
+    = stylesheet_link_tag    'application', media: 'all'
+    = csrf_meta_tags
+  body
+    .uk-container.uk-container-center
+      nav.uk-navbar
+        = link_to root_path, class: 'uk-navbar-brand'
+          | Resource Pool
+        = render 'layouts/navigation_links'
+
+      p[ class="notice" ]= notice
+      p[ class="alert" ]= alert
+
+      = yield
+      = javascript_include_tag 'application'

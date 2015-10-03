@@ -1,0 +1,7 @@
+- if user_signed_in?
+  .uk-navbar-flip
+    ul.uk-navbar-nav
+      li
+        = link_to destroy_user_session_path, :method=>'delete'
+          i.uk-icon.uk-icon-sign-out Log out
+
