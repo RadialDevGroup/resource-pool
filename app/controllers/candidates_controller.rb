@@ -5,6 +5,7 @@ class CandidatesController < ApplicationController
 
   def create
     @candidate = Candidate.new candidate_params
+
     if @candidate.save
       redirect_to root_path, notice: "Candidate created successfully"
     else

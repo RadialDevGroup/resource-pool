@@ -15,7 +15,6 @@ feature "New potential hire" do
   scenario "a user creates a new hire" do
     visit new_candidate_path
 
-    # candidate fields: name, email, telephone, linkedin, twitter
     fill_in "Name", with: candidate_attributes[:name]
     fill_in "Email", with: candidate_attributes[:email]
     fill_in "Telephone", with: candidate_attributes[:telephone]
@@ -32,7 +31,6 @@ feature "New potential hire" do
   scenario "a user cannot create an invalid new hire" do
     visit new_candidate_path
 
-    # candidate fields: name, email, telephone, linkedin, twitter
     fill_in "Name", with: candidate_attributes[:name]
 
     expect do
