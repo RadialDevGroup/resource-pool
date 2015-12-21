@@ -14,9 +14,25 @@ class CandidatesController < ApplicationController
     end
   end
 
+  def edit
+    @candidate = Candidate.find(params[:id])
+  end
+
+  def update
+    @candidate = Candidate.find(params[:id])
+    @candidate.attributes = candidate_params
+
+    if @candidate.save
+      redirect_to root_path, notice: "Candidate updated successfully"
+    else
+      flash[:alert] = @candidate.errors.full_messages.to_sentence
+      render :edit
+    end
+  end
+
   private
 
   def candidate_params
-    params.require(:candidate).permit(:name, :email, :telephone, :linkedin, :twitter)
+    params.require(:candidate).permit(:name, :email, :telephone, :linkedin, :twitter, :referral_source)
   end
 end

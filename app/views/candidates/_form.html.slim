@@ -1,0 +1,33 @@
+= form_for @candidate, class: 'uk-form' do |f|
+  .uk-form-row
+    = f.label :name
+    .uk-form-controls
+      = f.text_field :name
+
+  .uk-form-row
+    = f.label :email
+    .uk-form-controls
+      = f.text_field :email
+
+  .uk-form-row
+    = f.label :telephone
+    .uk-form-controls
+      = f.text_field :telephone
+
+  .uk-form-row
+    = f.label :referral_source
+    .uk-form-controls
+      = f.text_field :referral_source
+
+  .uk-form-row
+    = f.label :linkedin, "LinkedIn"
+    .uk-form-controls
+      = f.text_field :linkedin
+
+  .uk-form-row
+    = f.label :twitter
+    .uk-form-controls
+      = f.text_field :twitter
+
+  .uk-form-row
+    = f.submit
