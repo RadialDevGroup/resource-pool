@@ -1,6 +1,12 @@
 require 'rails_helper'
 
 feature "Track referrals" do
+  let!(:user) { create :user }
+
+  before do
+    sign_in user
+  end
+
   scenario "creating a candidate with a referral source" do
     visit new_candidate_path
 
@@ -15,6 +21,7 @@ feature "Track referrals" do
 
   context "with an existing candidate" do
     let(:candidate) { create :candidate }
+    
     scenario "creating a candidate with a referral source" do
       visit edit_candidate_path candidate
 
