@@ -1,0 +1,17 @@
+- unless @candidates.empty?
+  table.uk-table.uk-table-stripped
+    thead
+      tr
+        th name
+        th email
+        th telephone
+    tbody
+  - @candidates.each do |candidate|
+      tr
+        td.name = link_to candidate.name, candidate_path(candidate)
+        td.email = candidate.email
+        td.telephone = candidate.telephone
+- else
+  p
+   | No candidates found.  Please apply.
+     Thank you!
