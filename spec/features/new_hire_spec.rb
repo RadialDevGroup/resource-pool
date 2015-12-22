@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "New potential hire" do
   let(:user) { create :user, password: 'password', confirmed_at: Time.now }
   let(:candidate_attributes) { attributes_for :candidate }
- 
+  
   before do
     sign_in user
   end
