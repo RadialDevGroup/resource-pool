@@ -6,7 +6,7 @@ class CandidatesController < ApplicationController
   def show
     @candidate = Candidate.find(params[:id])
   end
-  
+
   def new
     @candidate = Candidate.new
   end
@@ -41,6 +41,6 @@ class CandidatesController < ApplicationController
   private
 
   def candidate_params
-    params.require(:candidate).permit(:name, :email, :telephone, :linkedin, :twitter, :referral_source)
+    params.require(:candidate).permit(:name, :email, :telephone, :linkedin, :twitter, :referral_source, :candidacy)
   end
 end

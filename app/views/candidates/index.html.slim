@@ -6,15 +6,20 @@
         th name
         th email
         th telephone
+        th candidacy
+        td actions
     tbody
     - @candidates.each do |candidate|
       tr
-        td.name = link_to candidate.name, candidate_path(candidate)
-        td.email = candidate.email
-        td.telephone = candidate.telephone
+        td.name= link_to candidate.name, candidate_path(candidate)
+        td.email= candidate.email
+        td.telephone= candidate.telephone
+        td.candidacy= candidate.human_candidacy
+        td.actions
+          = link_to 'Screened', candidate_path(candidate, candidate: { candidacy: :screened}), method: :patch
 - else
   p
-   | No candidates found.  Please apply.
-     Thank you!
+    | No candidates found.  Please apply.
+      Thank you!
 
   = link_to "New Candidate", [:new, :candidate], class: 'uk-button uk-button-primary'
