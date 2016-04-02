@@ -10,7 +10,7 @@ describe 'Viewing the list of candidates' do
   end
 
   scenario "a user can see a list of potential candidates" do
-    visit candidates_path
+    visit root_path
 
     expect(page).to have_content candidates.first.name
     expect(page).to have_content candidates.first.email
@@ -18,7 +18,7 @@ describe 'Viewing the list of candidates' do
   end
 
   scenario "someone views an individual candidate" do
-    visit candidates_path
+    visit root_path
 
     click_link candidate.name, candidate_path(candidate.id)
     expect(page).to have_content candidate.name

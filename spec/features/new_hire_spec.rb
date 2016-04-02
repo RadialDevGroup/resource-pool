@@ -3,13 +3,15 @@ require 'rails_helper'
 feature "New potential hire" do
   let(:user) { create :user, password: 'password', confirmed_at: Time.now }
   let(:candidate_attributes) { attributes_for :candidate }
-  
+
   before do
     sign_in user
   end
 
   scenario "a user creates a new hire" do
-    visit new_candidate_path
+    visit candidates_path
+
+    click_on 'New Candidate'
 
     fill_in "Name", with: candidate_attributes[:name]
     fill_in "Email", with: candidate_attributes[:email]

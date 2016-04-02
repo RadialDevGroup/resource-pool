@@ -1,4 +1,5 @@
 - unless @candidates.empty?
+  = link_to "New Candidate", [:new, :candidate], class: 'uk-button uk-button-primary'
   table.uk-table.uk-table-stripped
     thead
       tr
@@ -6,7 +7,7 @@
         th email
         th telephone
     tbody
-  - @candidates.each do |candidate|
+    - @candidates.each do |candidate|
       tr
         td.name = link_to candidate.name, candidate_path(candidate)
         td.email = candidate.email
@@ -15,3 +16,5 @@
   p
    | No candidates found.  Please apply.
      Thank you!
+
+  = link_to "New Candidate", [:new, :candidate], class: 'uk-button uk-button-primary'
